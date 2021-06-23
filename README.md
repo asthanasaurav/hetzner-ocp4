@@ -82,13 +82,13 @@ yum install -y centos-release-ansible-29.noarch
 Install ansible (min version 2.8) and git
 
 ```
-[root@server ~]# yum install -y ansible git
+yum install -y ansible git
 ```
 
 You are now ready to clone this project to your CentOS system.
 
 ```
-[root@server ~]# git clone https://github.com/RedHat-EMEA-SSA-Team/hetzner-ocp4.git
+git clone https://github.com/RedHat-EMEA-SSA-Team/hetzner-ocp4.git
 ```
 
 We are now ready to install `libvirt` as our hypervisor, provision VMs and prepare those for OCP.
@@ -150,6 +150,15 @@ Please configure in `cluster.yml` all necessary credentials:
 |`letsencrypt_disabled`|`false`|This allows you to disable letsencrypt setup. (Default is enabled letsencrypt.)
 |`sdn_plugin_name`|`OVNKubernetes`|This allows you to change SDN plugin. Valid values are OpenShiftSDN and OVNKubernetes. (Default is OVNKubernetes.)
 |`masters_schedulable`|true|Set to false if don't want to allow workload onto the master nodes. (Default is to allow this)|
+
+
+
+Install EPEL 
+
+```
+sudo yum install epel-release
+```
+
 
 ## Prepare kvm-host and install OpenShift
 
